@@ -1,0 +1,85 @@
+.transaction-list-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 400px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 32px 0;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  transition: background 0.2s;
+}
+
+.transaction-item:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.t-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.t-desc {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.t-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.t-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.t-amount {
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  color: white;
+  background: rgba(255,255,255,0.1);
+}
+
+.action-btn.text-red:hover {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+}

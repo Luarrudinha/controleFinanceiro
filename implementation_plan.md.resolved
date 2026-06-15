@@ -1,0 +1,70 @@
+# Sistema de Controle Financeiro
+
+Este plano descreve o desenvolvimento de um sistema de controle financeiro responsivo (mobile, tablet e PC) com funcionalidades de CRUD para receitas e despesas, gráficos de fluxo de caixa e um design premium moderno baseado na imagem fornecida (Dark Mode, Glassmorphism, Gradientes Neon).
+
+## User Review Required
+
+> [!IMPORTANT]
+> O design será criado utilizando **Vanilla CSS** para garantir o máximo de controle sobre as animações, efeitos de "glassmorphism" e o fundo com gradientes dinâmicos (bolhas de luz neon roxa e azul), conforme as diretrizes do sistema.
+> Se você concorda com o plano abaixo, por favor me dê a aprovação para iniciar a criação do projeto base e instalação das dependências!
+
+## Open Questions
+
+> [!TIP]
+> 1. Você gostaria de usar **React com Vite** para este projeto, certo? Isso garante uma performance excelente e facilidade de criação de componentes responsivos.
+> 2. Como não utilizaremos banco de dados num primeiro momento, posso salvar os dados no **Local Storage** do navegador para que os seus gastos e ganhos fiquem salvos mesmo se você fechar a página?
+
+## Proposed Changes
+
+### Estrutura e Ferramentas
+- **Framework:** React.js (via Vite)
+- **Estilização:** Vanilla CSS (com variáveis para paleta de cores dark/neon e efeitos glassmorphism)
+- **Gráficos:** `recharts` para o gráfico de entradas e saídas
+- **Ícones:** `lucide-react`
+- **Armazenamento:** `localStorage` para persistência dos dados no navegador
+
+### Componentes (Design System)
+As cores serão baseadas na imagem:
+- Fundo: Azul muito escuro/Preto (`#0b0c10` ou similar)
+- Gradientes: Roxo vibrante (`#b026ff`) e Azul vibrante (`#2a52be`)
+- Cards: Efeito de vidro (Glassmorphism) com fundo semi-transparente, bordas finas e desfoque (`backdrop-filter: blur`).
+- Textos: Branco e tons de cinza claro.
+
+---
+
+### Arquivos e Estrutura Planejada
+
+#### [NEW] Vite + React Setup inicial
+Comandos que serão executados: `npx create-vite-app@latest . --template react` (ou equivalente para react) e instalação de `recharts`, `lucide-react`, `uuid`.
+
+#### [NEW] `src/index.css` & `src/App.css`
+Aqui ficarão todas as variáveis CSS, os estilos do design system (cards translúcidos, botões glow) e os estilos de responsividade (Media Queries para celular e tablet). O fundo com as formas geométricas brilhantes será implementado aqui.
+
+#### [NEW] `src/components/BackgroundGlow.jsx`
+Um componente responsável apenas por renderizar as esferas de luz no fundo que dão o efeito visual principal da imagem.
+
+#### [NEW] `src/components/Dashboard.jsx`
+O layout principal contendo a barra lateral (ou menu superior no mobile) e o grid principal.
+
+#### [NEW] `src/components/SummaryCard.jsx`
+Baseado no card central da imagem ("Total Balance", "Income", "Expense"). Mostrará o saldo total atualizado com base nas transações.
+
+#### [NEW] `src/components/TransactionsChart.jsx`
+Utilizará o `recharts` para exibir o gráfico de entradas vs saídas ao longo do tempo.
+
+#### [NEW] `src/components/TransactionForm.jsx`
+Um modal ou seção para Adicionar/Editar uma transação (Receita ou Despesa), contendo campos de Valor, Descrição, Data e Tipo.
+
+#### [NEW] `src/components/TransactionList.jsx`
+Lista responsiva de todas as transações, com botões para Editar e Excluir cada uma delas.
+
+## Verification Plan
+
+### Testes Manuais
+- Verificar se a aplicação roda localmente com sucesso.
+- Redimensionar a tela para testar a responsividade (Visualização Desktop, Tablet e Mobile).
+- Adicionar uma receita e verificar se o Saldo e Gráficos atualizam.
+- Adicionar uma despesa e verificar se desconta do Saldo.
+- Editar e excluir lançamentos para atestar que o CRUD funciona.
+- Recarregar a página para atestar que os dados estão sendo mantidos (Local Storage).
+- Comparar visualmente o resultado com a imagem base (A estética dark, gradientes luminosos e glassmorphism são mandatórios).
